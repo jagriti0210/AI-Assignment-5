@@ -9,14 +9,13 @@ class TicTacToe:
     def __init__(self):
         self.board = [" "] * 9
 
-    # Display board
     def print_board(self):
         print()
         for i in range(0, 9, 3):
             print(self.board[i], "|", self.board[i+1], "|", self.board[i+2])
         print()
 
-    # Available positions
+
     def available_moves(self):
         moves = []
 
@@ -26,15 +25,12 @@ class TicTacToe:
 
         return moves
 
-    # Place symbol
     def make_move(self, position, player):
         self.board[position] = player
 
-    # Undo move
     def undo_move(self, position):
         self.board[position] = " "
 
-    # Check winner
     def is_winner(self, player):
 
         winning_positions = [
@@ -56,11 +52,10 @@ class TicTacToe:
 
         return False
 
-    # Check draw
     def is_draw(self):
         return " " not in self.board
 
-    # Check if game over
+
     def game_over(self):
         return (
             self.is_winner("X") or
@@ -81,7 +76,7 @@ def minimax(game, maximizing_player):
     if game.is_draw():
         return 0
 
-    # Maximizing player (X)
+  
     if maximizing_player:
 
         best_score = -math.inf
@@ -97,7 +92,7 @@ def minimax(game, maximizing_player):
 
         return best_score
 
-    # Minimizing player (O)
+  
     else:
 
         best_score = math.inf
@@ -243,11 +238,11 @@ def evaluate_board(game):
             game.board[combo[2]]
         ]
 
-        # Good for X
+        
         if values.count("X") == 2 and values.count(" ") == 1:
             score += 10
 
-        # Good for O
+        
         if values.count("O") == 2 and values.count(" ") == 1:
             score -= 10
 
