@@ -6,8 +6,7 @@ PROJECTS INCLUDED
 4. Knowledge Graph Implementation
 5. Bayesian Network Implementation
 
-
-
+---
 
 1. IMPLEMENTATION OF SEARCH ALGORITHMS
 
